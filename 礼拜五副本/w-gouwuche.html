@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="js/angular-route.js" type="text/javascript" charset="utf-8"></script>-->
+		<style type="text/css">
+			.wwrap {
+				width: 1285px;
+				/*height: 1000px;*/
+				margin: 0 auto;
+			}
+			
+			.wheader {
+				display: flex;
+				justify-content: space-between;
+				height: 72px;
+			}
+			
+			.wheader_right {
+				overflow: hidden;
+			}
+			
+			.wheader_right li {
+				float: left;
+				margin-right: 45px;
+				margin-top: 50px;
+				font-size: 18px;
+			}
+			
+			.wheader_right li:nth-child(1) {
+				color: rgb(247, 131, 49);
+			}
+			
+			.wheader_right li:nth-child(5) {
+				margin-right: 0px;
+			}
+			
+			.wshopping {
+				margin-top: 50px;
+			}
+			
+			.wshopping span {
+				padding-left: 18px;
+				color: rgb(179, 179, 179);
+				font-size: 18px;
+				font-weight: 200;
+			}
+			
+			.wtrade {
+				height: 45px;
+				background: rgb(242, 242, 242);
+				line-height: 45px;
+				margin-top: 20px;
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			.wtrade span {
+				padding-left: 20px;
+				font-size: 17px;
+			}
+			
+			.wlist {
+				display: block;
+			}
+			
+			.wlist li {
+				float: right;
+				margin-right: 150px;
+				font-size: 17px;
+			}
+			
+			.wlist li:nth-child(1) {
+				margin-right: 60px;
+			}
+			
+			.wtrade1 {
+				/*	height: 425px;*/
+				margin-top: 20px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			
+			.wtrade1 img {
+				width: 80px;
+				height: 80px;
+				border: 1px solid #DCDCDC;
+			}
+			
+			.wlist1 li {
+				float: right;
+				margin-right: 130px;
+				margin-top: 50px;
+			}
+			
+			.wlist1 li:nth-child(1) {
+				margin-right: 60px;
+			}
+			
+			.wlist1 li:nth-child(2) {
+				margin-right: 90px;
+				width: 100px;
+			}
+			
+			.wlist1 li:nth-child(5) {
+				margin-right: 110px;
+			}
+			
+			.wlist1 li:nth-child(3) {
+				margin-right: 100px;
+				width: 110px;
+			}
+			
+			.wlist1 li:nth-child(4) {
+				margin-right: 71px;
+				text-align: center;
+				width: 110px;
+			}
+			
+			.wkuang {
+				height: 120px;
+				width: 280px;
+				position: relative;
+			}
+			
+			.w {
+				border: 1px solid #BBBBBB;
+			}
+			
+			.wkuang img {
+				margin-top: 20px;
+				position: absolute;
+				left: 30px;
+			}
+			
+			.wkuang input {
+				position: absolute;
+				top: 50px;
+			}
+			
+			.wkuang span {
+				position: absolute;
+				top: 55px;
+				right: 20px;
+			}
+			
+			.wjian,
+			.wshu,
+			.wjia {
+				display: inline-block;
+				width: 27px;
+				height: 27px;
+				line-height: 27px;
+				border: 1px solid #DCDCDC;
+				text-align: center;
+				float: left;
+				background: rgb(242, 242, 242);
+			}
+			
+			.wshu {
+				width: 40px;
+				margin-left: 0;
+			}
+			
+			.ww {
+				float: left;
+				width: 100px;
+				border: 1px solid #DCDCDC;
+			}
+			
+			.wmoney,
+			.wzong {
+				margin-top: 30px;
+				text-align: right;
+				font-size: 18px;
+				border-bottom: 1px solid #BBBBBB;
+				padding-bottom: 20px;
+				cursor: pointer;
+			}
+			
+			.wstyle,
+			.wzong>span {
+				color: red;
+				font-size: 23px;
+				padding-left: 20px;
+				margin-right: 20px;
+			}
+			
+			.wzong {
+				padding-right: 20px;
+			}
+			
+			.wzong a {
+				font-size: 20px;
+				padding: 5px 20px;
+				background: rgb(247, 131, 39);
+				color: white;
+				border-radius: 5px;
+			}
+			
+			.wzong_left {
+				text-align: left;
+				color: rgb(0, 179, 58);
+			}
+			
+			#wquanxuan {
+				/*display: inline-block;*/
+				padding-right: 20px;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myApp" ng-controller="mycontr">
+
+		<div class="wwrap">
+			<!--logo-->
+			<!--顶部信息-->
+			<div class="wheader">
+				<div class="wlogo">
+					<img src="img/ylogo.png" alt="" />
+				</div>
+				<div class="wheader_right">
+					<ul>
+						<li>我的购物车</li>
+						<li>></li>
+						<li>确认信息订单</li>
+						<li>></li>
+						<li>订单提交成功</li>
+					</ul>
+				</div>
+
+			</div>
+			<!--购物车标志-->
+			<div class="wshopping">
+				<img src="img/gouwuche.png.png" /><span>购物车</span>
+			</div>
+			<!--爱果果水果店-->
+			<div class="wtrade">
+				<div>
+					<input type="checkbox" checked="checked" /><span>爱果果水果店</span>
+				</div>
+				<ul class="wlist">
+					<li>操作</li>
+					<li>金额</li>
+					<li>数量</li>
+					<li>单价</li>
+					<li>规格</li>
+				</ul>
+			</div>
+			<!--购物车列表-->
+			<div class="w">
+
+				<div class="wtrade1" ng-repeat="item in Arr">
+					<div class="wkuang">
+						<input type="checkbox" id="ww" />
+
+						<img src="{{item.img}}" />
+						<span>{{item.name}}</span>
+					</div>
+					<ul class="wlist1">
+						<li ng-click="wrem($index)">删除</li>
+						<li>{{item.num*item.tatal}}</li>
+						<li>
+							<div class="ww">
+								<span class="wjian" ng-click="sub($index)">➖</span>
+								<i class="wshu" ng-model="item.num">{{item.num}}</i>
+								<strong class="wjia" ng-click="add($index)">➕</strong>
+							</div>
+
+						</li>
+						<li>{{item.tatal}}</li>
+						<li>{{item.guige}}</li>
+					</ul>
+
+				</div>
+				<div class="wmoney">商品金额 : <span class="wstyle">{{allprice() | currency:"¥"}}</span></div>
+			</div>
+			<!--商品总计-->
+			<div class="wzong">
+				<div class="wzong_left">
+					<span id="wquanxuan">全选 </span>
+					<strong id="wfanxuan">反选</strong>
+				</div>
+				商品总计: <span>{{allprice() | currency:"¥"}}</span>
+				<a href="#/goumai">立即购买</a>
+			</div>
+		</div>
+
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+
+	var app = angular.module("myApp", [])
+		app.controller("mycontr", function($scope) {
+			$scope.Arr = [{
+				img: "img/shiliu.jpg",
+				name: "云南石榴",
+				guige: "8个装",
+				price: 60,
+				num: 1,
+				tatal: 60
+			}, {
+				img: "img/chengzi.jpg",
+				name: "橙子",
+				guige: "12个装",
+				price: 21,
+				num: 1,
+				tatal: 21
+			}, {
+				img: "img/yangrou.jpg",
+				name: "羊肉",
+				guige: "1个",
+				price: 27,
+				num: 1,
+				tatal: 27
+			}]
+			//总价
+			$scope.allprice = function() {
+
+				var allprice = 0; //总价必须给个初始值
+				for(var i = 0; i < $scope.Arr.length; i++) {
+					allprice += $scope.Arr[i].price * $scope.Arr[i].num
+				}
+				return allprice
+			}
+			//点击加
+			$scope.add = function(index) {
+				$scope.Arr[index].num++
+			}
+			//点击减
+			$scope.sub = function(index) {
+				if($scope.Arr[index].num > 1) {
+					$scope.Arr[index].num--
+				}
+
+			}
+			//点击删除按钮
+			$scope.wrem = function(index) {
+				if(confirm("确定删除" + $scope.Arr[index].name + "吗?")) {
+					$scope.Arr.splice(index, 1);
+				}
+			}
+			
+		})
+			//点击quanxuan
+			$("#wquanxuan").click(function() {
+
+				$(" :checkbox").prop("checked", true)
+
+			})
+				//点击反选
+			$("#wfanxuan").click(function() {
+			
+				$(" :checkbox").prop("checked", function(i, val) {
+					return !val
+
+				})
+
+			})
+	</script>
+</html>

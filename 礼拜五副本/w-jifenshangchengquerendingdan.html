@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>积分商城确认订单</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.whead {
+				width: 1285px;
+				margin: 0 auto;
+				margin-top: 20px;
+				height: 90px;
+			}
+			
+			.whead span {
+				display: inline-block;
+				font-size: 23px;
+				font-weight: 300;
+				margin-left: 65px;
+				color: rgb(140, 140, 140);
+				border-left: 1px solid;
+				height: 30px;
+				padding: 5px 50px;
+			}
+			
+			.wmessage {
+				width: 1285px;
+				margin: 0 auto;
+				overflow: hidden;
+				margin-top: 20px;
+			}
+			
+			.wmessage span {
+				float: left;
+				font-size: 20px;
+				color: rgb(140, 140, 140);
+			}
+			
+			.wmessage button {
+				float: right;
+				font-size: 18px;
+				color: white;
+				background: rgb(247, 131, 39);
+				outline: none;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			.wdetails {
+				width: 1285px;
+				margin: 20px auto;
+				background: rgb(243, 255, 243);
+				height: 45px;
+				line-height: 45px;
+			}
+			
+			.wdetails span {
+				margin-left: 15px;
+				color: rgb(102, 102, 102);
+				font-size: 17px;
+			}
+			
+			.wdetails>strong {
+				margin-left: 20px;
+				color: rgb(140, 140, 140);
+			}
+			
+			.wxiugai {
+				float: right;
+				margin-left: 20px;
+				margin-right: 10px;
+				color: rgb(99, 165, 101);
+			}
+			
+			.wDefaultAddress {
+				color: rgb(247, 139, 49);
+				padding-left: 560px;
+			}
+			
+			.wdevelop {
+				width: 1285px;
+				margin: 20px auto;
+				color: rgb(99, 165, 101);
+			}
+			
+			.wdevelop span {
+				padding-left: 10px;
+			}
+			
+			.wdevelop img {
+				padding-right: 10px;
+			}
+			
+			#w_jia,
+			#w_jian {
+				display: inline-block;
+				border: 1px solid #BBBBBB;
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background: #DDDDDD;
+				cursor: pointer;
+			}
+			
+			#w_shuliang {
+				display: inline-block;
+				height: 30px;
+				width: 50px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #BBBBBB;
+				margin-left: 0;
+			}
+			
+			h5 {
+				font-size: 20px;
+				color: rgb(140, 140, 140);
+				margin-top: 25px;
+				padding-top: 20px;
+				border-top: 1px solid #BBBBBB;
+			}
+			
+			.wtable {
+				width: 1285px;
+				margin: 15px auto;
+			}
+			
+			.wtable td img {
+				margin-top: 10px;
+				vertical-align: middle;
+			}
+			
+			.wtitle {
+				background: rgb(242, 242, 242);
+				font-size: 20px;
+				line-height: 30px;
+			}
+			
+			.wtitle th:nth-child(1) {
+				width: 30%;
+			}
+			
+			.wtitle th:nth-child(2) {
+				width: 300px;
+			}
+			
+			.wtitle th:nth-child(3) {
+				width: 300px;
+			}
+			
+			.wtitle th:nth-child(4) {
+				width: 300px;
+			}
+			
+			.w_list td:nth-child(2) {
+				text-align: center;
+				width: 30%;
+			}
+			
+			.w_list td:nth-child(3) {
+				text-align: center;
+				width: 300px;
+			}
+			
+			.w_list td:nth-child(4) {
+				text-align: center;
+				width: 300px;
+			}
+			
+			.w_list td:nth-child(1) {
+				padding-left: 20px;
+				width: 300px;
+			}
+			
+			.w_beizhu {
+				margin-top: 20px;
+				border-top: 1px solid #BBBBBB;
+			}
+			
+			.w_beizhu span {
+				display: inline-block;
+				font-size: 20px;
+				margin-top: 20px;
+				color: rgb(140, 140, 140);
+			}
+			
+			.w_beizhu input {
+				width: 600px;
+				margin-top: 25px;
+				font-size: 18px;
+			}
+			/*遮盖层*/
+			
+			.wfade {
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.2);
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 10000;
+			}
+			
+			.wsucc-pop,
+			.waddlist {
+				width: 500px;
+				height: 300px;
+				background: white;
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				z-index: 20000;
+				text-align: center;
+				box-shadow: 0px 0px 2px 3px #BBBBBB inset;
+			}
+			
+			.wsucc-pop img {
+				vertical-align: middle;
+				margin-top: 50px;
+			}
+			
+			.wsucc-pop span {
+				display: inline-block;
+				color: rgb(140, 140, 140);
+				font-size: 20px;
+				margin-left: 20px;
+				margin-top: 50px;
+				vertical-align: middle;
+			}
+			
+			.wsucc-pop span:nth-of-type(2) {
+				font-size: 14px;
+			}
+			
+			#w_shopping,
+			#w_examine {
+				margin-top: 50px;
+				color: white;
+				background: rgb(247, 131, 39);
+				padding: 5px 20px;
+				font-size: 20px;
+				outline: none;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			#w_examine {
+				background: rgb(61, 147, 67);
+			}
+			
+			.wfadew {
+				display: none;
+			}
+			
+			.waddlist {
+				width: 700px;
+				height: 450px;
+				background: white;
+			}
+			
+			h1 {
+				margin-top: 20px;
+				color: rgb(61, 145, 67);
+				font-size: 20px;
+				border-bottom: 1px solid #DCDCDC;
+				text-align: left;
+				margin-left: 20px;
+				padding-bottom: 20px;
+			}
+			/*弹框*/
+			
+			.wconsignee {
+				text-align: left;
+				padding-left: 25px;
+			}
+			
+			.wconsignee span:nth-child(1),
+			.wxin {
+				color: rgb(244, 177, 43);
+			}
+			
+			.wconsignee span:nth-child(2),
+			.wconsignee input,
+			.w_sanji,
+			.wwxiang,
+			.wipont span {
+				color: rgb(51, 51, 51);
+				font-size: 20px;
+			}
+			
+			.wconsignee input {
+				width: 300px;
+			}
+			
+			.w_sanji {
+				display: inline-block;
+				margin-top: 30px;
+			}
+			
+			.wwxiang {
+				display: inline-block;
+				margin-top: 25px;
+			}
+			
+			.wipont {
+				margin-top: 30px;
+			}
+			
+			.wipont input {
+				font-size: 15px;
+				width: 130px;
+			}
+			
+			.wipont span:nth-child(1) {
+				color: rgb(244, 177, 43);
+			}
+			
+			.wchang {
+				width: 500px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			
+			.wchang span {
+				display: inline-block;
+				margin-left: 20px;
+				vertical-align: middle;
+				margin-top: 20px;
+				font-size: 20px;
+			}
+			
+			.wchang input {
+				width: 20px;
+			}
+			
+			#btn,
+			#btn2 {
+				margin-top: 30px;
+				padding: 5px 40px;
+				color: white;
+				font-size: 20px;
+				background: #BBBBBB;
+				outline: none;
+				border: none;
+				border-radius: 5px;
+			}
+			
+			#btn2 {
+				background: rgb(247, 131, 39);
+			}
+			
+			.wdong {
+				width: 400px;
+				float: right;
+				margin-top: 28px;
+				margin-right: 150px;
+			}
+			
+			.wadd {
+				display: none;
+			}
+			
+			.wmoney {
+				margin-top: 30px;
+				text-align: right;
+				font-size: 18px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myApp" ng-controller="mycontro">
+		<div class="whead">
+			<img src="img/ylogo.png" />
+
+			<span>确认兑换信息</span>
+		</div>
+		<!--收货人信息-->
+		<div class="wmessage">
+			<span>收货人信息</span>
+			<button ng-click="wshiyong()">使用新地址</button>
+		</div>
+		<div class="quanbu">
+
+			<div class="wdetails">
+
+				<input type="radio" checked/>
+				<span>山东曹县普连集镇张庄村73号  李锦威收,15517180250</span>
+				<strong>默认地址</strong>
+				<em class="wxiugai" ng-click="wremove($index)">删除</em>
+				<em class="wxiugai">修改</em>
+			</div>
+			<div class="www">
+				<div class="wdetails">
+					<input type="radio" />
+					<span>山东曹县普连集镇张庄村73号  李锦威收,15517180250 </span>
+					<em class="wDefaultAddress">设置为默认地址</em>
+					<em class="wxiugai" ng-click="wremove($index)">删除</em>
+					<em class="wxiugai">修改</em>
+				</div>
+
+				<div class="wdetails">
+					<input type="radio" />
+					<span>山东曹县普连集镇张庄村73号  李锦威收,15517180250 </span>
+					<em class="wDefaultAddress">设置为默认地址</em>
+					<em class="wxiugai">删除</em>
+					<em class="wxiugai">修改</em>
+				</div>
+
+				<div class="wdetails">
+					<input type="radio" />
+					<span>山东曹县普连集镇张庄村73号  李锦威收,15517180250 </span>
+					<em class="wDefaultAddress">设置为默认地址</em>
+					<em class="wxiugai">删除</em>
+					<em class="wxiugai">修改</em>
+				</div>
+			</div>
+
+			<div class="wdevelop">
+				<span id="wrest">展开其他地址</span> &nbsp; &nbsp;<img src="img/向下的标志.png" />
+				<span id="wshouqiba">收起地址</span> &nbsp; &nbsp;<img src="img/向上的标志.png" />
+				<h5>商品信息</h5>
+			</div>
+		</div>
+		<div class="wtable">
+			<table border="0" cellspacing="0" cellpadding="0">
+
+				<tr class="wtitle">
+					<th>商品名称</th>
+					<th>规格</th>
+					<th>数量</th>
+					<th>金额</th>
+				</tr>
+				<!---->
+
+				<tr class="w_list" ng-repeat="item in jifenArr">
+					<td>
+						<img src="{{item.img}}" />
+						<span>{{item.name}}</span>
+					</td>
+					<td>{{item.guige}}</td>
+					<td>
+						<span id="w_jian" ng-click="sub($index)">➖</span><span id="w_shuliang" ng-model="item.num">{{item.num}}</span><span id="w_jia" ng-click="add($index)">➕</span>
+
+					</td>
+					<td>{{item.price*item.num}}</td>
+				</tr>
+
+			</table>
+			<div class="wmoney">商品金额 : <span class="wstyle">{{allprice() | currency:"¥"}}</span></div>
+			<div class="w_beizhu">
+				<span>添加订单备注</span><br />
+				<input type="text" name="" id="" value="" placeholder="限45个字 请填写有关商品,支付发票等信息" />
+			</div>
+
+		</div>
+		<!--弹框-->
+		<!--最大的遮盖层-->
+		<div class="wfadew">
+			<div class="wfade"> </div>
+			<!--小弹框-->
+			<div class="wsucc-pop">
+				<img src="img/zhifuchneggong.png" />
+				<span>新疆和蜜瓜(8kg装),&nbsp;葡萄(150g)</span><br />
+				<span>无法送到指定区域,请到购物车中删除商品或修改配送地址后重新提交订单</span><br />
+				<button id="w_shopping">赶回购物车修改</button>
+				<button id="w_examine">修改配送区域</button>
+			</div>
+
+		</div>
+		<!--添加地址弹框-->
+		<div class="wadd">
+			<div class="wfade"> </div>
+			<!--里面的详情-->
+			<div class="waddlist">
+				<h1>添加地址</h1>
+
+				<div class="wconsignee">
+					<span>*</span>
+					<span>收货人的姓名 : </span>
+					<input type="text" placeholder=" 可以填写收货人的姓名" /><br /> &nbsp;&nbsp;
+					<span class="wxin">*</span>
+					<span class="w_sanji">所在地区 : </span>
+					<div data-toggle="distpicker" class="wdong">
+						<select data-province="---- 选择省 ----"></select>
+						<select data-city="---- 选择市 ----"></select>
+						<select data-district="---- 选择区 ----"></select>
+					</div>
+					<br /> &nbsp;&nbsp;
+
+					<span class="wxin">*</span> <span class="wwxiang">详细地址 : </span> <input type="text" placeholder=" 用于接收货的详细的地址" class="www" /><br />
+
+				</div>
+				<div class="wipont">
+					&nbsp;&nbsp;<span class="wxin">*</span> <span>&nbsp; 联系电话 : </span> <input type="text" placeholder=" 推荐使用手机号" /> <span>或固定电话 : </span><input type="text" placeholder="区号" />- <input type="text" placeholder="电话号码" /><br />
+					<!--设置常用地址-->
+					<div class="wchang">
+						<input type="radio" />设置为常用地址<br />
+						<button id="btn" ng-click="wbtn()">返回</button>
+						<button id="btn2">保存</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<script src="js/distpicker.data.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/distpicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module("myApp", []);
+			app.controller("mycontro", function($scope,$http) {
+				//地址详情设置
+
+				//			$scope.dizhiArr=[{dizhi:"山东曹县普连集镇张庄村73号  李锦威收,15517180250"},{moren:"设置为默认地址"},{remove:"删除",add:"修改"},{dizhi:"山东曹县普连集镇张庄村73号  李锦兵收,15517180250"},{moren:"设置为默认地址"},{remove:"删除",add:"修改"},{dizhi:"山东曹县普连集镇张庄村73号  李锦豹收,15517180250"},{moren:"设置为默认地址"},{remove:"删除",add:"修改"}]
+ $http({
+	 method:"post",
+	 url:"http://localhost:8080/quanbu",
+	 data:{
+
+	 }
+ }).success(function(data){
+
+ })
+
+
+
+
+
+
+
+
+
+				$scope.jifenArr = [{
+					img: "img/shiliu.png",
+					name: "云南石榴",
+					guige: "8个装",
+					price: 60,
+					num: 1,
+					jifen: '60积分'
+				}, {
+					img: "img/shiliu.png",
+					name: "橙子",
+					guige: "12个装",
+					price: 60,
+					num: 1,
+					jifen: "21积分"
+				}]
+
+				//总价
+				$scope.allprice = function() {
+
+					var allprice = 0; //总价必须给个初始值
+					for(var i = 0; i < $scope.jifenArr.length; i++) {
+						allprice += $scope.jifenArr[i].price * $scope.jifenArr[i].num
+					}
+					return allprice
+				}
+				//点击加
+				$scope.add = function(index) {
+
+					$scope.jifenArr[index].num++
+				}
+				//点击减
+				$scope.sub = function(index) {
+					if($scope.jifenArr[index].num > 1) {
+						$scope.jifenArr[index].num--
+					}
+
+				}
+
+				//					
+
+				//			
+
+				//点击使用新地址
+							$scope.wshiyong=function(){
+								$(".wadd").show(500)
+							}
+							//点击返回
+							$scope.wbtn=function(){
+									$(".wadd").hide()
+							}
+			})
+			$("#wshouqiba").click(function() {
+				$(".www").hide()
+			})
+			$("#wrest").click(function() {
+				$(".www").show()
+			})
+		</script>
+	</body>
+
+</html>

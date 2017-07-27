@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style type="text/css">
+			.wwrap {
+				width: 1285px;
+		    /*    height: 1000px;*/
+			/*border: 1px solid red;*/
+				margin: 0 auto;
+			}
+			
+			.wlist,
+			.wstair,
+			.wreclassify {
+				overflow: hidden;
+				height: 35px;
+				line-height: 35px;
+				margin-top: 22px;
+			}
+			
+			.wlist {
+				overflow: hidden;
+				height: 50px;
+				line-height: 50px;
+				margin-top: 22px;
+			}
+			
+			.wstair,
+			.wreclassify {
+				border-bottom: 1px solid rgb(221, 221, 221);
+				color: rgb(51, 51, 70);
+				margin-top: 20px;
+				font-weight: 400;
+				font-size: 14px;
+				padding-bottom: 15px;
+			}
+			
+			.wstair li,
+			.wreclassify li {
+				padding: 0px 7px;
+			}
+			
+			.wreclassify {
+				margin-top: 20px;
+			}
+			
+			.wlist {
+				background: rgb(244, 244, 244);
+				color: rgb(139, 138, 139);
+				font-size: 14px;
+			}
+			/*.wstair{
+				width: 820px;
+				border: 1px solid red;
+			
+			}*/
+			
+			.wlist li,
+			.wstair li,
+			.wreclassify li {
+				float: left;
+				margin-left: 20px;
+			}
+			
+			.wstair li:nth-child(1),
+			.wreclassify li:nth-child(1) {
+				margin-left: 0px;
+			}
+			
+			.wstair li:nth-child(9) {
+				background: rgb(75, 148, 61);
+				color: white;
+			}
+			
+			.wsort li {
+				margin-left: 30px;
+				color: rgb(139, 138, 139);
+				font-size: 13px;
+			}
+			
+			.wsort li:nth-child(1) {
+				margin-left: 0px;
+				border: none;
+			}
+			
+			.wsort li:nth-child(2) {
+				color: rgb(75, 148, 61);
+				border: 1px solid rgb(75, 148, 61);
+			}
+			
+			.wreclassify li:nth-child(3) {
+				color: white;
+				background: rgb(75, 148, 61);
+			}
+			
+			.wsort2 li {
+				color: rgb(139, 138, 139);
+				font-size: 13px;
+				margin-right: 30px;
+				background: rgb(222, 222, 222);
+			}
+			
+			.wsort2 li:hover {
+				color: white;
+				background: rgb(75, 148, 61);
+			}
+			
+			.wsort2 li:nth-child(1) {
+				background: none;
+				border: none;
+				color: rgb(139, 138, 139);
+			}
+			
+			.wsort li:hover {
+				color: rgb(75, 148, 61);
+				border: 1px solid rgb(75, 148, 61);
+			}
+			
+			.wsort li:nth-child(1):hover {
+				color: rgb(139, 138, 139);
+				border: none;
+			}
+			
+			.wsort2 li:nth-child(5) {
+				margin-right: 9px;
+			}
+			
+			.wsort2 li:nth-child(2) {
+				background: rgb(75, 148, 61);
+				color: white;
+			}
+			
+			.wsort li,
+			.wsort2 li {
+				float: left;
+				padding: 10px;
+				border: 1px solid rgb(221, 221, 221);
+			}
+			
+			.wbox {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 10px;
+			}
+			
+			.wstair li:hover,
+			.wreclassify li:hover {
+				background: rgb(75, 148, 61);
+				color: white;
+			}
+				.wpicture:hover{
+					border: 1px solid green;
+			}
+			.wstair li:nth-child(1):hover,
+			.wreclassify li:nth-child(1):hover {
+				background: none;
+				color: black;
+			}
+			.wguanchuan{
+				text-decoration: line-through   ;
+				color:rgb(102,102,102) ;
+			}
+			.wpicture {
+				width: 308px;
+				height: 390px;
+			
+				border: 1px solid rgb(221, 221, 221);
+			}
+			
+			.wpicture img {
+				width: 305px;
+				/*height: 300px;*/
+			}
+			
+			h2 {
+				font-size: 20px;
+				margin-left: 30px;
+			}
+			
+			.wpicture span,
+			.wpicture strong {
+				display: inline-block;
+			margin-top: 20px;
+				font-size: 20px;
+				margin-top: 25px;
+			}
+			
+			.wpicture span {
+				color: red;
+				margin-left: 30px;
+				margin-right: 10px;
+			}
+		
+			.wgouwu{
+			width: 34px;
+			height: 30px;
+			float: right;
+			margin-right: 30px;
+		margin-top: 20px;
+			}
+			.wgouwu img{
+			width: 34px;
+			height: 30px;
+			
+			}
+			.wlistfile{
+				width: 1285px;
+				height: 860px;		
+				margin-top: 17px;
+				display: flex;
+				flex-wrap:wrap;		
+			justify-content:space-between;			
+			}
+		.wlistfile div:nth-child(11),.wlistfile div:nth-child(12){
+			border: none;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div class="ww">
+			
+		
+		<div class="wwrap">
+			<ul class="wlist">
+				<li>您的当前位置:</li>
+				<li>首页</li>
+				<li>></li>
+				<li>全部商品</li>
+				<li>></li>
+				<li>蛋奶速食</li>
+				<li>></li>
+				<li>方便速食</li>
+			</ul>
+			<!--一级分类-->
+			<ul class="wstair">
+				<li>一级分类:</li>
+				<li>全部</li>
+				<li>新鲜水果</li>
+				<li>田园蔬菜</li>
+				<li>肉类家禽</li>
+				<li>海鲜水产</li>
+				<li>优选食材</li>
+				<li>零食酒水</li>
+				<li>蛋奶速食</li>
+				<li>全球代购</li>
+
+			</ul>
+			<!--二级分类-->
+			<ul class="wreclassify">
+				<li>二级分类:</li>
+				<li>全部</li>
+				<li>方便速食</li>
+				<li>奶制品</li>
+				<li>面包甜点</li>
+				<li>蛋品</li>
+			</ul>
+			<!--排序分类-->
+			<div class="wbox">
+				<ul class="wsort">
+					<li>排序:</li>
+					<li>销量</li>
+					<li>价格从低到高</li>
+					<li>价格从高到低</li>
+					<li>评价最高</li>
+				</ul>
+
+				<ul class="wsort2">
+					<li>筛选:</li>
+					<li>全部</li>
+					<li>全国</li>
+					<li>同城</li>
+					<li>次日达</li>
+				</ul>
+
+			</div>
+			<!--图片展示 picture-->
+			<div class="wlistfile">	
+				
+					<div class="wpicture">
+				<img src="img/banmian.jpg" alt="" />
+				<h2>沙湖拌面酱</h2>
+				<span>¥11</span>
+				<strong  class="wguanchuan">¥0</strong>
+	<div  class="wgouwu">
+			<img src="img/gouwuche.png"/>
+	</div>
+			
+			
+			</div>
+			<!--第二个商品-->
+			
+			<div class="wpicture">
+				<img src="img/jiamojaing.jpg" alt="" />
+				<h2>沙湖夹馍酱</h2>
+				<span>¥11</span>
+				<strong class="wguanchuan">¥0</strong>
+	<div  class="wgouwu">
+			<img src="img/gouwuche.png"/>
+	</div>
+			
+			
+			</div>
+			<!--第三个-->
+			<div class="wpicture">
+				<img src="img/niuroujiang.jpg" alt="" />
+				<h2>沙湖牛肉酱</h2>
+				<span>¥11</span>
+				<strong  class="wguanchuan">¥0</strong>
+	<div  class="wgouwu">
+			<img src="img/gouwuche.png"/>
+	</div>
+				
+					</div>
+					
+						<!--第四个-->
+			<div class="wpicture">
+				<img src="img/xinaglajiang.jpg" alt="" />
+				<h2>沙湖香辣酱.</h2>
+				<span>¥11</span>
+				<strong  class="wguanchuan">¥0</strong>
+	<div  class="wgouwu">
+			<img src="img/gouwuche.png"/>
+	</div>
+				
+					</div>
+						<!--第五个-->
+			<div class="wpicture">
+				<img src="img/lajiaojiang.jpg" alt="" />
+				<h2>沙湖枸杞辣椒酱</h2>
+				<span>¥45</span>
+				<strong  class="wguanchuan">¥0</strong>
+	<div  class="wgouwu">
+			<img src="img/gouwuche.png"/>
+	</div>
+				
+					</div>
+					
+					
+					
+				</div>
+	</div>
+		</div>
+	</body>
+
+</html>

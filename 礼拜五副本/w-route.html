@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-route.js" type="text/javascript" charset="utf-8"></script>	
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="mycontro">
+			<div ng-include="'bestHeader.html'"></div>
+			<div ng-include="'header.html'" ng-show="a"></div>
+			<ng-view></ng-view>		
+		</div>
+	</body> 
+	
+	 <script src="w-route.js" type="text/javascript" charset="utf-8"></script>
+        
+	
+</html>

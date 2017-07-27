@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			.wwrapw{
+				width: 1285px;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+				.wheader{
+				display: flex;
+				justify-content: space-between;
+				height: 72px;
+			
+				
+			}
+			.wheader_right{
+				overflow: hidden;
+				
+			}
+			.wheader_right li{
+				float: left;
+				margin-right: 45px;
+			margin-top: 50px;
+			font-size: 18px;
+		
+			}
+			.wheader_right li:nth-child(3){
+					color: rgb(247,131,49);
+			}
+			.wheader_right li:nth-child(5){
+					margin-right: 0px;
+			}
+			h1{
+				font-size: 18px;
+				color: rgb(140,140,140);
+				margin-top: 30px;
+				border-top: 1px solid #BBBBBB;
+				padding-top: 20px;
+					padding-bottom: 20px;
+					border-bottom: 1px solid #BBBBBB;
+			}
+			.wconsignee{
+				width: 1285px;
+				margin: 20px auto;
+			}
+			.wconsignee span:nth-child(1),.wxin,.wipont span:nth-child(1),.w_yanse{
+				color: rgb(244,107,43);
+			}
+			.wconsignee span:nth-child(2),.wconsignee span:nth-of-type(4),.wconsignee span:nth-of-type(6){
+			font-size: 18px;
+			display: inline-block;
+				color: rgb(51,51,51);
+				margin-left: 10px;
+			margin-top: 20px;
+			}
+			.wconsignee input{
+				margin-left: 15px;
+				width: 333px;
+				font-size: 18px;
+				color: #DCDCDC;
+			}
+			.wipont {
+				width: 1285px;
+				margin: 15px auto;
+			}
+			.wipont span:nth-child(2){
+					color: rgb(51,51,51);
+						font-size: 18px;
+			}
+			.wipont input{
+					width: 200px;
+				font-size: 18px;
+				color: #DCDCDC;
+			}
+			#w_btn{
+				font-size: 18px;
+				font-weight: 300;
+				padding: 5px 30px;
+				color: white;
+				background: rgb(247,131,39);
+				outline: none;
+				border: none;
+				border-radius: 8px;
+				margin-top: 50px;
+			margin-left: 130px;
+			}
+			#w_jia,#w_jian{
+					display: inline-block;
+					border: 1px solid #BBBBBB;
+				width: 40px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background: #DDDDDD;
+			}
+			#w_shuliang{
+				display: inline-block;
+					height: 30px;
+				width: 50px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #BBBBBB;
+				margin-left: 0;
+			}
+			h5{
+				font-size: 20px;
+				color: rgb(140,140,140);
+				margin-top: 25px;
+				padding-top: 20px;
+				margin-bottom: 20px;
+				border-top: 1px solid #BBBBBB;
+			}
+						.wtable{
+				width: 1285px;
+				
+				margin: 20px auto;
+			}
+			
+			.wtable td img{
+				margin-top: 10px;
+			vertical-align: middle;
+			}
+			.wtitle{
+				background: rgb(242,242,242);
+				font-size: 20px;
+				line-height: 30px;
+			}
+			.wtitle th:nth-child(1){
+	
+				width:250px ;
+			
+			
+			}
+				.wtitle th:nth-child(5){
+	
+				width:250px ;
+			
+			
+			}
+			.wtitle th:nth-child(2){
+				width:250px ;
+			}
+			.wtitle th:nth-child(3){
+				width:250px ;
+			}
+			.wtitle th:nth-child(4){
+				width:250px ;
+		
+			}
+			.w_list td:nth-child(2){
+				text-align: center;
+			
+				width:250px ;
+			}
+				.w_list td:nth-child(3){
+				text-align: center;
+		
+				width:250px ;
+			}
+				.w_list td:nth-child(5){
+				text-align: center;
+		
+				width:250px ;
+			}
+				.w_list td:nth-child(4){
+				text-align: center;
+			
+				width:250px ;
+			}
+				.w_list td:nth-child(1){
+		
+			padding-left: 20px;
+			
+				width:300px ;
+			}
+			.wfreight{
+				text-align: right;
+				margin-right: 20px;
+				margin-top: 10px;
+			border-bottom: 1px solid #DCDCDC;
+			padding-bottom: 20px;
+			}
+			.wfreight span,.w_xinxi{
+				color: rgb(140,140,140);
+				font-size: 18px;
+			}
+			.w_ziti{
+					color: rgb(140,140,140);
+			}
+			.wfreight strong{
+					color: red;
+				font-size: 22px;
+			}
+			.wMake{
+				border-bottom: 1px solid #DCDCDC;
+				padding-bottom: 20px;
+			}
+			.wMake p{
+				font-size: 20px;
+					color: rgb(140,140,140);
+					margin-top: 20px;
+			}
+			.wMake input{
+				
+				margin-top: 20px;
+				margin-left: 20px;
+			}
+			.w_input{
+				width: 300px;
+			}
+			.w_beizhu{
+				width: 600px;
+				height: 25px;
+				font-size: 18px;
+				color: rgb(140,140,140);
+			}
+		</style>
+	</head>
+	<body>
+			<!--顶部信息-->
+			<div class="wwrapw">
+				<div class="wheader">
+				<div class="wlogo">
+					<img src="img/ylogo.png" alt="" />
+				</div>
+				<div class="wheader_right">
+					<ul>
+						<li>我的购物车</li>
+						<li>></li>
+						<li>确认信息订单</li>
+						<li>></li>
+						<li>订单提交成功</li>
+					</ul>
+				</div>
+							
+			</div>
+				<!--收货人的信息-->
+			<h1>收货人信息</h1>					
+			</div>
+		<div class="wconsignee">
+					<span>*</span>
+					<span>收货人的姓名 : </span>
+					<input type="text" placeholder=" 可以填写收货人的姓名"/><br />
+					&nbsp;&nbsp;<span class="wxin">*</span>
+					<span>三级联动</span><br />
+					
+				&nbsp;&nbsp;<span class="wxin">*</span>	<span>详细地址 : </span> <input type="text" placeholder=" 用于接收货的详细的地址"/><br />
+			
+			</div>
+				<div class="wipont">
+						&nbsp;&nbsp;<span class="wxin">*</span>	<span>&nbsp; 联系电话 : </span> <input type="text" placeholder=" 推荐使用手机号"/> <span>或固定电话 : </span><input type="text" placeholder="区号"/>- <input type="text" placeholder="电话号码"/><br />
+						<button id="w_btn">确认并设为默认背景</button>
+						
+				</div>
+					<div class="wtable">
+							<h5>商品信息</h5>
+		<table border="0" cellspacing="0" cellpadding="0">
+		
+				<tr class="wtitle">
+		<th>爱果果水果店</th>	
+		<th>规格</th>
+		<th>单价</th>
+		<th>数量</th>
+		<th>金额</th>
+	</tr>
+	<!---->
+	
+	<tr class="w_list">
+		<td>
+			<img src="img/shiliu.png"/>
+			<span>云南蒙自石榴 8个装</span>
+		</td>
+		<td>8个装</td>
+	
+		<td>¥569</td>
+			<td>
+				<span id="w_jian">➖</span><span id="w_shuliang">1</span><span id="w_jia">➕</span>
+
+		</td>
+			<td>¥569</td>
+	</tr>
+	
+		<tr class="w_list">
+		<td>
+			<img src="img/shiliu.png"/>
+			<span>云南蒙自石榴 8个装</span>
+		</td>
+		<td>8个装</td>
+		
+		<td>¥569</td>
+		<td>
+				<span id="w_jian">➖</span><span id="w_shuliang">1</span><span id="w_jia">➕</span>
+
+		</td>
+			<td>¥569</td>
+	</tr>
+	
+		<tr class="w_list">
+		<td>
+			<img src="img/shiliu.png"/>
+			<span>云南蒙自石榴 8个装</span>
+		</td>
+		<td>8个装</td>
+		
+		<td>¥569</td>
+		<td>
+				<span id="w_jian">➖</span><span id="w_shuliang">1</span><span id="w_jia">➕</span>
+
+		</td>
+			<td>¥569</td>
+	</tr>
+	
+	</table>
+	<div class="wfreight">
+		<span>运费 &nbsp;&nbsp;</span> <strong >¥ 5.0</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>商品金额 &nbsp;&nbsp;</span> <strong >¥ 108.0</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span>商品合计 &nbsp;&nbsp;</span> <strong >¥ 108.0</strong>
+	</div>
+		<!--开票信息-->
+		<div class="wMake">
+			<p>开票信息</p>
+			<input type="radio" />  <span class="w_ziti">不需要</span>
+				<input type="radio" /> <span class="w_ziti">个人</span>
+				<input type="radio" /> <span class="w_ziti">单位</span><br />
+				&nbsp;&nbsp;<span class="w_xinxi">发票抬头 : </span><input type="text"  class="w_input"/> <span class="w_yanse">*</span> <span class="w_xinxi">请填写后认真检查发票信息</span>
+		</div> 	
+		<h5>添加订单备注</h5>
+		<input type="text" placeholder="限45个字 请填写有关商品 支付 发票等信息" class="w_beizhu"/>
+			</div>
+		
+	</body>
+</html>

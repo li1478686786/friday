@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular-route.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.ww{
+				width: 1280px;
+				margin: 0 auto;
+			
+			}
+				.wwrapw{
+				width: 1280px;
+				margin:0 auto ;
+				margin-top: 20px;
+			}
+				.wheader{
+				display: flex;
+				justify-content: space-between;
+				height: 72px;
+			
+				
+			}
+			.wheader_right{
+				overflow: hidden;
+				
+			}
+			.wheader_right li{
+				float: left;
+				margin-right: 45px;
+			margin-top: 50px;
+			font-size: 18px;
+		
+			}
+			.wheader_right li:nth-child(5){
+					color: rgb(247,131,49);
+			}
+			.wheader_right li:nth-child(5){
+					margin-right: 0px;
+			}
+			.w_submit{
+				margin-left: 320px;
+				margin-top: 100px;			
+				text-align: center;
+				width: 600px;
+			}
+			.w_submit em{
+			font-size: 22px;
+			color: rgb(140,140,140);
+			display: inline-block;
+			margin-top: 50px;
+			}
+			.w_submit em:nth-of-type(2){
+				color: rgb(247,131,39);
+				padding-left: 10px;
+			}
+			.w_dingwei{
+				background: rgb(243,255,243);
+				height: 40px;
+				border-bottom: 1px solid #DCDCDC;
+				border-top: 1px solid #DCDCDC;
+				line-height: 40px;
+				color: rgb(140,140,140);
+				margin-top: 50px;
+				
+			}
+			.wamount{
+				overflow: hidden;
+				margin-top: 30px;
+			border-bottom: 1px solid #DCDCDC;
+			}
+			.wamount_left{
+				width: 350px;
+		float: left;
+				height: 90px;
+				font-size: 20px;
+				color: rgb(140,140,140);
+				
+			}
+			.wamount_left strong{
+				display: inline-block;
+				padding-top: 30px;
+			}
+			.wamount_left i{
+				color: red;
+				font-size: 30px;
+			}
+			.wamount_left span:nth-child(2){
+				padding-left: 15px;
+			}
+			.wamount_right{
+				float: right;	
+			margin-top: 20px;
+			color: rgb(140,140,140);
+			}
+			.wpayment{
+				margin-top: 25px;
+			}
+			.wpayment input{
+					margin-left: 30px;
+			}
+		.wpayment img{
+			vertical-align: middle;
+		
+		}
+		.wsweep{
+		position: relative;
+			margin-top: 50px;
+		}
+		#wzhifu{
+			width: 170px;
+			height: 44px;
+			font-size: 20px;
+			font-weight: 300;
+			color: white;
+			background: rgb(247,131,39);
+			border-radius: 5px;
+			outline: none;
+			border: none;
+			position: absolute;
+			top: 300px;
+			left: 305px;
+		}
+		
+			/*遮盖层*/
+			.wfadew{
+			display: none;
+			}
+			.wfade{
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.2);
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 10000;
+			
+			}
+			.wsucc-pop{
+				width: 600px;
+				height: 500px;
+				background: white;
+				position: fixed;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				z-index: 20000;
+				text-align: center;
+				box-shadow: 0px 0px 2px 3px #BBBBBB inset;
+			}
+			.wsucc-pop span:nth-child(1){
+				margin-top: 100px;
+				display: inline-block;
+				font-size: 29px;
+				color: rgb(247,131,39);
+			}
+				.wsucc-pop span:nth-child(2){
+			
+				font-size: 14px;
+				color: white;
+			}
+			.w_yemian{
+				margin-top: 50px;
+				display: inline-block;
+				font-size: 18px;
+				color: rgb(112,112,112);
+			}
+			#w_shopping,#w_examine{
+				margin-top: 50px;
+				color: white;
+				font-size: 20px;
+				background: rgb(247,131,39);
+				padding: 10px 25px;
+				outline: none;
+				border: none;
+				border-radius:5px ;
+			}
+			#w_examine{
+					background: rgb(56,113,58);
+					margin-left: 50px;
+						padding: 10px 45px;
+			}
+		
+		</style>
+	</head>
+	
+	<body ng-app="myapp" ng-controller="mycontro">
+	
+			
+		
+			<div ng-include="'bestHeader.html'" ></div>
+				<div class="ww">
+		<div ng-include="'w-zhifushangchengzhifuchenggong.html'" ng-show="a"></div>
+			
+		<ng-view></ng-view>
+		
+			<!--顶部信息-->
+			<div class="wwww">
+				
+			
+			<div class="wwrapw">
+				<div class="wheader">
+				<div class="wlogo">
+					<img src="img/ylogo.png" alt="" />
+				</div>
+				<div class="wheader_right">
+					<ul>
+						<li>我的购物车</li>
+						<li>></li>
+						<li>确认信息订单</li>
+						<li>></li>
+						<li>订单提交成功</li>
+					</ul>
+				</div>
+						</div>	
+						<!--订单已提交-->
+						<div class="w_submit">
+							<img src="img/zhifuchneggong.png"/><br />
+							<em>订单已提交,请在24小时内完成支付</em><em>(订单逾期将被取消)</em>
+						</div>
+						<!--送货地址-->
+						<div class="w_delivery">
+							
+							<div class="w_dingwei">
+								<img src="img/dingwei.png"/>
+									<span>送货至 : 李锦威 北京 仓平区 号地块扶危济困 固定电话 15517180250</span>
+							</div>
+						<!--应付金额部分-->
+						<div class="wamount">
+							<!--左边-->
+							<div class="wamount_left">
+								<span>应付金额 : <i>165.90</i></span> <span>(在线支付)</span><br />
+								<strong>支付平台</strong>
+							</div>
+							<!--右边-->
+							<div class="wamount_right">
+								<span>订单编号:123456789123</span>
+							</div>
+						</div>
+						<!--付款方式-->
+						<div class="wpayment">
+							<input type="radio" checked="" />
+							<img src="img/zhifubao.png"/>
+							<input type="radio" />
+							<img src="img/weixinzhifu.png"/>
+								<input type="radio" />
+							<img src="img/yinlian.png"/><span>银联支付</span>
+								<input type="radio" />
+							<img src="img/yvezhifu.png"/><span>余额支付</span>
+						</div>
+						<!--扫码支付-->
+						<div class="wsweep">
+							<img src="img/hello.jpg"/>
+							<button id="wzhifu" ng-click="wzhifu()">立即支付</button>
+						</div>
+						</div>
+			</div>
+			    <!--弹框-->
+                                    <!--最大的遮盖层-->
+                                    <div class="wfadew">
+                                    	   <div class="wfade"> </div>
+                                    <!--小弹框-->
+                                    <div class="wsucc-pop">
+                                    	
+                                    	<span>使用平台支付</span><br />
+                                    	<span class="w_yemian">请您在新打开的网上银行页面进行支付,支付完成前请不要关闭此页面</span><br />
+                                    	<button id="w_shopping" ng-click="wchenggong()">已经完成支付<br /><span class="w_chakan">查看订单详情</span></button>
+                                    	<button id="w_examine">支付失败<br /><span class="w_chakan">更换支付方式</span></button>
+                                    </div>
+                                    	
+                                    </div>
+                                 </div>
+                        <div ng-include="'foot.html'" ></div>     
+                        </div>
+	</body>
+	 
+	<script type="text/javascript">
+		
+		var app=angular.module("myapp",[])
+		app.controller("mycontro",function($scope){
+			$scope.a=false
+				
+			$scope.wzhifu=function(){			
+				$(".wfadew").show(500)
+			}
+			//点击支付成功
+			$scope.wchenggong=function(){
+				
+				$scope.a=true
+					$(".wfadew").hide()
+					$(".wwww").hide()
+					
+			}
+			
+		})
+	</script>
+</html>
